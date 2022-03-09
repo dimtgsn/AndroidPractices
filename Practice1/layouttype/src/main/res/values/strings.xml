@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Layout Type</string>
+    <string name="name">Name:</string>
+    <string name="name_val">Tony Stark</string>
+    <string name="org">Organisation:</string>
+    <string name="org_val">Mirea</string>
+    <string name="phone">+7(911)111–11–11</string>
+    <string name="mobile">(mobile)</string>
+    <string name="save">SAVE</string>
+</resources>

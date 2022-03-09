@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <Button
+            android:id="@+id/button22"
+            android:layout_width="334dp"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:text="Первая кнопка" />
+
+        <Button
+            android:id="@+id/button25"
+            android:layout_width="364dp"
+            android:layout_height="wrap_content"
+            android:text="Вторая кнопка" />
+    </TableRow>
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <Button
+            android:id="@+id/button23"
+            android:layout_width="339dp"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:text="Третья кнопка" />
+
+        <Button
+            android:id="@+id/button26"
+            android:layout_width="335dp"
+            android:layout_height="wrap_content"
+            android:text="Четвёртая кнопка" />
+    </TableRow>
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <Button
+            android:id="@+id/button24"
+            android:layout_width="347dp"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:text="Пятая кнопка" />
+
+        <Button
+            android:id="@+id/button27"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Шестая кнопка" />
+    </TableRow>
+</TableLayout>

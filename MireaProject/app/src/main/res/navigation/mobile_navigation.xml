@@ -24,7 +24,7 @@
         tools:layout="@layout/fragment_slideshow" />
     <fragment
         android:id="@+id/nav_calculate"
-        android:name="ru.mirea.gasanyan.mireaproject.ui.calculate.CalculateFragment"
+        android:name="ru.mirea.gasanyan.mireaproject.CalculateFragment"
         android:label="@string/menu_calculate"
         tools:layout="@layout/fragment_calculate" />
 </navigation>

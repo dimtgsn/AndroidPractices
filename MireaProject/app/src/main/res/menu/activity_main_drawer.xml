@@ -1,28 +1,3 @@
-<!--<?xml version="1.0" encoding="utf-8"?>-->
-<!--<menu xmlns:android="http://schemas.android.com/apk/res/android"-->
-<!--    xmlns:tools="http://schemas.android.com/tools"-->
-<!--    tools:showIn="navigation_view">-->
-
-<!--    <group android:checkableBehavior="single">-->
-<!--        <item-->
-<!--            android:id="@+id/nav_home"-->
-<!--            android:icon="@drawable/ic_menu_camera"-->
-<!--            android:title="@string/menu_home" />-->
-<!--        <item-->
-<!--            android:id="@+id/nav_gallery"-->
-<!--            android:icon="@drawable/ic_menu_gallery"-->
-<!--            android:title="@string/menu_gallery" />-->
-<!--        <item-->
-<!--            android:id="@+id/nav_slideshow"-->
-<!--            android:icon="@drawable/ic_menu_slideshow"-->
-<!--            android:title="@string/menu_slideshow" />-->
-<!--        <item-->
-<!--            android:id="@+id/nav_calculate"-->
-<!--            android:icon="@android:drawable/ic_menu_edit"-->
-<!--            android:title="@string/menu_calculate" />-->
-<!--    </group>-->
-<!--</menu>-->
-
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
@@ -46,15 +21,15 @@
             android:icon="@drawable/ic_menu_share"
             android:title="Share" />
         <item
-            android:id="@+id/calculateFragment"
+            android:id="@+id/nav_calculate"
             android:icon="@drawable/ic_menu_calculate"
             android:title="@string/menu_calculate" />
         <item
-            android:id="@+id/webViewFragment"
+            android:id="@+id/nav_webView"
             android:icon="@drawable/ic_menu_web"
             android:title="@string/menu_web" />
         <item
-            android:id="@+id/musicFragment"
+            android:id="@+id/nav_music"
             android:icon="@drawable/ic_menu_music"
             android:title="@string/menu_music" />
     </group>

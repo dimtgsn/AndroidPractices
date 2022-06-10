@@ -27,4 +27,14 @@
         android:name="ru.mirea.gasanyan.mireaproject.CalculateFragment"
         android:label="@string/menu_calculate"
         tools:layout="@layout/fragment_calculate" />
+    <fragment
+        android:id="@+id/nav_webView"
+        android:name="ru.mirea.gasanyan.mireaproject.WebViewFragment"
+        android:label="@string/menu_web"
+        tools:layout="@layout/fragment_web_view" />
+    <fragment
+        android:id="@+id/nav_music"
+        android:name="ru.mirea.gasanyan.mireaproject.MusicFragment"
+        android:label="@string/menu_music"
+        tools:layout="@layout/fragment_music" />
 </navigation>

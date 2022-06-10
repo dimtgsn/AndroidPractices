@@ -38,6 +38,11 @@
         android:label="@string/menu_music"
         tools:layout="@layout/fragment_music" />
     <fragment
+        android:id="@+id/nav_camera"
+        android:name="ru.mirea.gasanyan.mireaproject.CameraFragment"
+        android:label="@string/menu_camera"
+        tools:layout="@layout/fragment_camera" />
+    <fragment
         android:id="@+id/nav_sensor"
         android:name="ru.mirea.gasanyan.mireaproject.ShowSensorsFragment"
         android:label="@string/menu_sensors"

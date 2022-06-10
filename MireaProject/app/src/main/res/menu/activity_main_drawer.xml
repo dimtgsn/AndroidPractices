@@ -33,6 +33,10 @@
             android:icon="@drawable/ic_menu_music"
             android:title="@string/menu_music" />
         <item
+            android:id="@+id/nav_camera"
+            android:icon="@drawable/ic_menu_camera"
+            android:title="@string/menu_camera" />
+        <item
             android:id="@+id/nav_sensor"
             android:icon="@drawable/ic_menu_sensors"
             android:title="@string/menu_sensors" />

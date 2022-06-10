@@ -23,11 +23,8 @@ public class ShowSensorsFragment extends Fragment implements SensorEventListener
     private String mParam1;
     private String mParam2;
 
-    public ShowSensorsFragment() {
-        // Required empty public constructor
-    }
+    public ShowSensorsFragment() { }
 
-    // TODO: Rename and change types and number of parameters
     public static ShowSensorsFragment newInstance(String param1, String param2) {
         ShowSensorsFragment fragment = new ShowSensorsFragment();
         Bundle args = new Bundle();
@@ -61,9 +58,7 @@ public class ShowSensorsFragment extends Fragment implements SensorEventListener
         View view = inflater.inflate(R.layout.fragment_show_sensors, container, false);
 
         lightSensorValue = view.findViewById(R.id.light_sensor);
-        // magnetic
         magneticText =  view.findViewById(R.id.magnetic_sensor);
-        //акселерометр
         azimuthTextView = view.findViewById(R.id.acceler_x);
         pitchTextView = view.findViewById(R.id.acceler_y);
         rollTextView = view.findViewById(R.id.acceler_z);

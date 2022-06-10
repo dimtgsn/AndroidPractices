@@ -35,9 +35,7 @@ public class CameraFragment extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    public CameraFragment() {
-        // Required empty public constructor
-    }
+    public CameraFragment() { }
 
     public static CameraFragment newInstance(String param1, String param2) {
         CameraFragment fragment = new CameraFragment();
@@ -68,13 +66,11 @@ public class CameraFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_camera, container, false);
         imageView = view.findViewById(R.id.photo);
-        // Выполняется проверка на наличие разрешений на использование камеры и запись в память
         int cameraPermissionStatus = ContextCompat.checkSelfPermission(getActivity().getApplicationContext(), Manifest.permission.CAMERA);
         int storagePermissionStatus = ContextCompat.checkSelfPermission(getActivity().getApplicationContext(), Manifest.permission.WRITE_EXTERNAL_STORAGE);
         if (cameraPermissionStatus == PackageManager.PERMISSION_GRANTED && storagePermissionStatus == PackageManager.PERMISSION_GRANTED) {
             isWork = true;
         } else {
-            // Выполняется запрос к пользователь на получение необходимых разрешений
             ActivityCompat.requestPermissions(getActivity(), new String[] {Manifest.permission.CAMERA, Manifest.permission.WRITE_EXTERNAL_STORAGE}, REQUEST_CODE_PERMISSION_CAMERA);
         }
         Button btn = view.findViewById(R.id.buttonCamera);
@@ -82,7 +78,6 @@ public class CameraFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 Intent cameraIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-                // проверка на наличие разрешений для камеры
                 if (cameraIntent.resolveActivity(getActivity().getPackageManager()) != null && isWork)
                 {
                     File photoFile = null;
@@ -91,7 +86,6 @@ public class CameraFragment extends Fragment {
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
-                    // генерирование пути к файлу на основе authorities
                     String authorities = getActivity().getApplicationContext().getPackageName() + ".fileprovider";
                     imageUri = FileProvider.getUriForFile(getActivity().getApplicationContext(), authorities, photoFile);
                     cameraIntent.putExtra(MediaStore.EXTRA_OUTPUT, imageUri);
@@ -104,7 +98,6 @@ public class CameraFragment extends Fragment {
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        // Если приложение камера вернула RESULT_OK, то производится установка изображению imageView
         if (requestCode == CAMERA_REQUEST && resultCode == Activity.RESULT_OK) {
             imageView.setImageURI(imageUri);
         }
@@ -117,10 +110,8 @@ public class CameraFragment extends Fragment {
     }
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
-// производится проверка полученного результата от пользователя на запрос разрешения Camera
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
         if (requestCode == REQUEST_CODE_PERMISSION_CAMERA) {
-            // permission granted
             isWork = grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED;
         }
     }

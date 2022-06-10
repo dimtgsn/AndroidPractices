@@ -36,9 +36,7 @@ public class RecordAudioFragment extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    public RecordAudioFragment() {
-        // Required empty public constructor
-    }
+    public RecordAudioFragment() { }
 
     public static RecordAudioFragment newInstance(String param1, String param2) {
         RecordAudioFragment fragment = new RecordAudioFragment();
@@ -79,10 +77,8 @@ public class RecordAudioFragment extends Fragment {
         startListening = view.findViewById(R.id.startListening);
         stopListening = view.findViewById(R.id.stopListening);
 
-        // инициализация объекта MediaRecorder
         mediaRecorder = new MediaRecorder();
 
-        // проверка наличия разрешений на выполнение аудиозаписи и сохранения на карту памяти
         isWork = hasPermissions(getActivity().getApplicationContext(), PERMISSIONS);
         if (!isWork) {
             ActivityCompat.requestPermissions(getActivity(), PERMISSIONS, REQUEST_CODE_PERMISSION);
@@ -152,7 +148,6 @@ public class RecordAudioFragment extends Fragment {
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
         if (requestCode == REQUEST_CODE_PERMISSION) {
-            // permission granted
             isWork = grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED;
         }
     }
@@ -162,14 +157,10 @@ public class RecordAudioFragment extends Fragment {
         String state = Environment.getExternalStorageState();
         if (Environment.MEDIA_MOUNTED.equals(state) || Environment.MEDIA_MOUNTED_READ_ONLY.equals(state)) {
             Log.d(TAG, "sd-card success");
-            // выбор источника звука
             mediaRecorder.setAudioSource(MediaRecorder.AudioSource.MIC);
-            // выбор формата данных
             mediaRecorder.setOutputFormat(MediaRecorder.OutputFormat.THREE_GPP);
-            // выбор кодека
             mediaRecorder.setAudioEncoder(MediaRecorder.AudioEncoder.AMR_NB);
             if (audioFile == null) {
-                // создание файла
                 audioFile = new File(getActivity().getExternalFilesDir(Environment.DIRECTORY_MUSIC), "mirea.3gp");
             }
             mediaRecorder.setOutputFile(audioFile.getAbsolutePath());
@@ -193,7 +184,6 @@ public class RecordAudioFragment extends Fragment {
         Log.d(TAG, "processAudioFile");
         ContentValues values = new ContentValues(4);
         long current = System.currentTimeMillis();
-        // установка meta данных созданному файлу
         values.put(MediaStore.Audio.Media.TITLE, "audio" + audioFile.getName());
         values.put(MediaStore.Audio.Media.DATE_ADDED, (int) (current / 1000));
         values.put(MediaStore.Audio.Media.MIME_TYPE, "audio/3gpp");

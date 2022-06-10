@@ -25,8 +25,8 @@
     <TableLayout
         android:id="@+id/tableLayout"
         android:layout_width="325dp"
-        android:layout_height="321dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.554"
         app:layout_constraintStart_toStartOf="parent"
@@ -176,16 +176,30 @@
 
         <TableRow android:gravity="right">
 
-            <Button
-                android:id="@+id/equals"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:backgroundTint="#3CC837"
-                android:onClick="equalsClicked"
-                android:text="=" />
         </TableRow>
 
     </TableLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="312dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="80dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/tableLayout"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/tableLayout">
+
+        <Button
+            android:id="@+id/equals"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:backgroundTint="#3CC837"
+            android:hapticFeedbackEnabled="false"
+            android:onClick="equalsClicked"
+            android:text="=" />
+    </LinearLayout>
 
     <TextView
         android:id="@+id/answer"

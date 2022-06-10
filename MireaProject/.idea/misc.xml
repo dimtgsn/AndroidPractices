@@ -3,9 +3,15 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Dmitry/AndroidStudioProjects/MireaProject/app/src/main/res/drawable/ic_baseline_next_plan_24.xml" value="0.2555" />
+        <entry key="..\:/Users/Dmitry/AndroidStudioProjects/MireaProject/app/src/main/res/drawable/ic_baseline_play_circle_filled_24.xml" value="0.2555" />
+        <entry key="..\:/Users/Dmitry/AndroidStudioProjects/MireaProject/app/src/main/res/drawable/ic_baseline_skip_next_24.xml" value="0.2555" />
+        <entry key="..\:/Users/Dmitry/AndroidStudioProjects/MireaProject/app/src/main/res/drawable/ic_baseline_stop_circle_24.xml" value="0.2555" />
         <entry key="..\:/Users/Dmitry/AndroidStudioProjects/MireaProject/app/src/main/res/drawable/ic_launcher_background.xml" value="0.2555" />
         <entry key="..\:/Users/Dmitry/AndroidStudioProjects/MireaProject/app/src/main/res/drawable/ic_menu_calculate.xml" value="0.2555" />
         <entry key="..\:/Users/Dmitry/AndroidStudioProjects/MireaProject/app/src/main/res/drawable/ic_menu_music.xml" value="0.2555" />
+        <entry key="..\:/Users/Dmitry/AndroidStudioProjects/MireaProject/app/src/main/res/drawable/ic_menu_record.xml" value="0.2555" />
+        <entry key="..\:/Users/Dmitry/AndroidStudioProjects/MireaProject/app/src/main/res/drawable/ic_menu_sensors.xml" value="0.2555" />
         <entry key="..\:/Users/Dmitry/AndroidStudioProjects/MireaProject/app/src/main/res/drawable/ic_menu_share.xml" value="0.2555" />
         <entry key="..\:/Users/Dmitry/AndroidStudioProjects/MireaProject/app/src/main/res/drawable/ic_menu_slideshow.xml" value="0.2555" />
         <entry key="..\:/Users/Dmitry/AndroidStudioProjects/MireaProject/app/src/main/res/drawable/ic_menu_web.xml" value="0.2555" />
@@ -15,8 +21,11 @@
         <entry key="..\:/Users/Dmitry/AndroidStudioProjects/MireaProject/app/src/main/res/layout/app_bar_main.xml" value="0.25" />
         <entry key="..\:/Users/Dmitry/AndroidStudioProjects/MireaProject/app/src/main/res/layout/content_main.xml" value="0.20923913043478262" />
         <entry key="..\:/Users/Dmitry/AndroidStudioProjects/MireaProject/app/src/main/res/layout/fragment_calculate.xml" value="0.25" />
+        <entry key="..\:/Users/Dmitry/AndroidStudioProjects/MireaProject/app/src/main/res/layout/fragment_camera.xml" value="0.25" />
         <entry key="..\:/Users/Dmitry/AndroidStudioProjects/MireaProject/app/src/main/res/layout/fragment_gallery.xml" value="0.25" />
         <entry key="..\:/Users/Dmitry/AndroidStudioProjects/MireaProject/app/src/main/res/layout/fragment_music.xml" value="0.25" />
+        <entry key="..\:/Users/Dmitry/AndroidStudioProjects/MireaProject/app/src/main/res/layout/fragment_record_audio.xml" value="0.25" />
+        <entry key="..\:/Users/Dmitry/AndroidStudioProjects/MireaProject/app/src/main/res/layout/fragment_show_sensors.xml" value="0.25" />
         <entry key="..\:/Users/Dmitry/AndroidStudioProjects/MireaProject/app/src/main/res/layout/fragment_web_view.xml" value="0.25" />
         <entry key="..\:/Users/Dmitry/AndroidStudioProjects/MireaProject/app/src/main/res/layout/nav_header_main.xml" value="0.25" />
         <entry key="..\:/Users/Dmitry/AndroidStudioProjects/MireaProject/app/src/main/res/menu/activity_main_drawer.xml" value="0.25" />

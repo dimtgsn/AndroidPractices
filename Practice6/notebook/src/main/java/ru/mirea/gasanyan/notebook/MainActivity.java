@@ -26,10 +26,10 @@ import java.io.IOException;
 
 public class MainActivity extends AppCompatActivity {
 
+    private SharedPreferences preferences;
+    private final String FILE_NAME = "mirea";
     private EditText fileName;
     private EditText fileText;
-    private SharedPreferences preferences;
-    private final String FILE_NAME = "notebook";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

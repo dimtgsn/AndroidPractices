@@ -22,7 +22,7 @@
         </activity>
         <provider
             android:name="androidx.core.content.FileProvider"
-            android:authorities="com.mirea.asd.camera.fileprovider"
+            android:authorities="ru.mirea.gasanyan.camera.fileprovider"
             android:exported="false"
             android:grantUriPermissions="true">
             <meta-data

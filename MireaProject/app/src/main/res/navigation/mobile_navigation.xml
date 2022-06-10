@@ -52,4 +52,9 @@
         android:name="ru.mirea.gasanyan.mireaproject.RecordAudioFragment"
         android:label="@string/menu_record"
         tools:layout="@layout/fragment_record_audio" />
+    <fragment
+        android:id="@+id/nav_settings"
+        android:name="ru.mirea.gasanyan.mireaproject.RecordAudioFragment"
+        android:label="@string/menu_settings"
+        tools:layout="@layout/fragment_settings" />
 </navigation>

@@ -16,8 +16,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/image_camera"
-        tools:ignore="MissingConstraints" />
+        app:srcCompat="@drawable/image_camera" />
 
     <Button
         android:id="@+id/buttonCamera"

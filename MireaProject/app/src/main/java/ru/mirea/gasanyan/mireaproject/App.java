@@ -18,11 +18,12 @@ public class App extends Application {
                 .build();
     }
 
+    public AppDatabase getDatabase() {
+        return database;
+    }
+
     public static App getInstance() {
         return instance;
     }
 
-    public AppDatabase getDatabase() {
-        return database;
-    }
 }

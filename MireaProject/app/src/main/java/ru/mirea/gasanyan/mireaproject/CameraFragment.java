@@ -28,14 +28,25 @@ import java.util.Date;
 
 public class CameraFragment extends Fragment {
 
-
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
 
     private String mParam1;
     private String mParam2;
 
-    public CameraFragment() { }
+    private static final int REQUEST_CODE_PERMISSION_CAMERA = 100;
+    final String TAG = MainActivity.class.getSimpleName();
+
+    private static final int CAMERA_REQUEST = 0;
+    private boolean isWork = false;
+    private Uri imageUri;
+
+    private ImageView imageView;
+
+
+    public CameraFragment() {
+        // Required empty public constructor
+    }
 
     public static CameraFragment newInstance(String param1, String param2) {
         CameraFragment fragment = new CameraFragment();
@@ -55,31 +66,24 @@ public class CameraFragment extends Fragment {
         }
     }
 
-    private static final int REQUEST_CODE_PERMISSION_CAMERA = 100;
-    final String TAG = MainActivity.class.getSimpleName();
-    private ImageView imageView;
-    private static final int CAMERA_REQUEST = 0;
-    private boolean isWork = false;
-    private Uri imageUri;
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_camera, container, false);
-        imageView = view.findViewById(R.id.photo);
-        int cameraPermissionStatus = ContextCompat.checkSelfPermission(getActivity().getApplicationContext(), Manifest.permission.CAMERA);
+        imageView = view.findViewById(R.id.photoView);
         int storagePermissionStatus = ContextCompat.checkSelfPermission(getActivity().getApplicationContext(), Manifest.permission.WRITE_EXTERNAL_STORAGE);
+
+        int cameraPermissionStatus = ContextCompat.checkSelfPermission(getActivity().getApplicationContext(), Manifest.permission.CAMERA);
         if (cameraPermissionStatus == PackageManager.PERMISSION_GRANTED && storagePermissionStatus == PackageManager.PERMISSION_GRANTED) {
             isWork = true;
         } else {
             ActivityCompat.requestPermissions(getActivity(), new String[] {Manifest.permission.CAMERA, Manifest.permission.WRITE_EXTERNAL_STORAGE}, REQUEST_CODE_PERMISSION_CAMERA);
         }
-        Button btn = view.findViewById(R.id.buttonCamera);
-        btn.setOnClickListener(new View.OnClickListener() {
+        Button btnCamera = view.findViewById(R.id.buttonCamera);
+        btnCamera.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent cameraIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-                if (cameraIntent.resolveActivity(getActivity().getPackageManager()) != null && isWork)
-                {
+                if (cameraIntent.resolveActivity(getActivity().getPackageManager()) != null && isWork) {
                     File photoFile = null;
                     try {
                         photoFile = createImageFile();
@@ -98,13 +102,16 @@ public class CameraFragment extends Fragment {
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
+
         if (requestCode == CAMERA_REQUEST && resultCode == Activity.RESULT_OK) {
             imageView.setImageURI(imageUri);
         }
     }
     private File createImageFile() throws IOException {
         String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
+
         String imageFileName = "IMAGE_" + timeStamp + "_";
+
         File storageDirectory = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES);
         return File.createTempFile(imageFileName, ".jpg", storageDirectory);
     }

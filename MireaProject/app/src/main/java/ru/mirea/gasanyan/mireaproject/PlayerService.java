@@ -9,20 +9,24 @@ import java.util.ArrayList;
 
 public class PlayerService extends Service {
     private MediaPlayer mediaPlayer;
+
     @Override
     public IBinder onBind(Intent intent) {
-        throw new UnsupportedOperationException("Not yet implemented");
+        throw new UnsupportedOperationException("Operation Exception");
     }
+
     @Override
     public void onCreate(){
-        mediaPlayer=MediaPlayer.create(this, MusicFragment.idSong());
+        mediaPlayer = MediaPlayer.create(this, MusicFragment.idSong());
         mediaPlayer.setLooping(true);
     }
+
     @Override
     public int onStartCommand(Intent intent, int flags, int startId){
         mediaPlayer.start();
         return START_STICKY;
     }
+
     @Override
     public void onDestroy() {
         mediaPlayer.stop();

@@ -20,6 +20,16 @@ public class MusicFragment extends Fragment {
     private String mParam1;
     private String mParam2;
 
+    private Button btn;
+    private ImageView imageCover;
+    static int i=0;
+    static int[] songs = {R.raw.dance_monkey,R.raw.industry_baby,R.raw.bones};
+    static int[] images = {R.drawable.lil_nas_x_industry_baby,R.drawable.imagine_dragons_bones,R.drawable.tones_and_i_dance_monkey};
+
+    public static int idSong(){
+        return songs[i];
+    }
+
     public MusicFragment() { }
 
     public static MusicFragment newInstance(String param1, String param2) {
@@ -40,22 +50,13 @@ public class MusicFragment extends Fragment {
         }
     }
 
-    private Button button;
-    private ImageView imageView;
-    static int i=0;
-    static int[] songs = {R.raw.dance_monkey,R.raw.industry_baby,R.raw.bones};
-    static int[] images = {R.drawable.lil_nas_x_industry_baby,R.drawable.imagine_dragons_bones,R.drawable.tones_and_i_dance_monkey};
-
-    public static int idSong(){
-        return songs[i];
-    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_music, container, false);
-        imageView = view.findViewById(R.id.imageView);
-        button =  view.findViewById(R.id.play);
-        button.setOnClickListener(new View.OnClickListener()
+        imageCover = view.findViewById(R.id.imageCover);
+        btn =  view.findViewById(R.id.play);
+        btn.setOnClickListener(new View.OnClickListener()
         {
             @Override
             public void onClick(View v) {
@@ -63,21 +64,20 @@ public class MusicFragment extends Fragment {
             }
         });
 
-        button =  view.findViewById(R.id.nextSong);
-        button.setOnClickListener(new View.OnClickListener()
+        btn =  view.findViewById(R.id.nextSong);
+        btn.setOnClickListener(new View.OnClickListener()
         {
             @Override
             public void onClick(View v) {
                 getActivity().stopService(new Intent(getActivity(), PlayerService.class));
                 i++;
-                if (i>2)
-                    i=0;
-                imageView.setImageResource(images[i]);
+                if (i>2) i=0;
+                imageCover.setImageResource(images[i]);
             }
         });
 
-        button =  view.findViewById(R.id.stop);
-        button.setOnClickListener(new View.OnClickListener()
+        btn =  view.findViewById(R.id.stop);
+        btn.setOnClickListener(new View.OnClickListener()
         {
             @Override
             public void onClick(View v) {

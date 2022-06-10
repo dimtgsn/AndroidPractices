@@ -7,7 +7,8 @@ import androidx.room.PrimaryKey;
 public class Owner {
     @PrimaryKey(autoGenerate = true)
     public long id;
-    public String pet;
+
     public String name;
+    public String job;
     public String age;
 }

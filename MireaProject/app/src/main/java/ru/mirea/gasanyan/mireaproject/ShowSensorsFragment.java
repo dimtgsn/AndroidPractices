@@ -60,6 +60,7 @@ public class ShowSensorsFragment extends Fragment implements SensorEventListener
         lightSensorValue = view.findViewById(R.id.light_sensor);
         magneticText =  view.findViewById(R.id.magnetic_sensor);
         azimuthTextView = view.findViewById(R.id.acceler_x);
+
         pitchTextView = view.findViewById(R.id.acceler_y);
         rollTextView = view.findViewById(R.id.acceler_z);
 
@@ -91,12 +92,13 @@ public class ShowSensorsFragment extends Fragment implements SensorEventListener
     public void onSensorChanged(SensorEvent event) {
         if (event.sensor.getType() == Sensor.TYPE_MAGNETIC_FIELD) {
             float valueMagnetic = event.values[0];
-            magneticText.setText("Магнитное поле: " + valueMagnetic);
+            magneticText.setText("Magnetic field: " + valueMagnetic);
         }
         else  if (event.sensor.getType() == Sensor.TYPE_ACCELEROMETER) {
             float valueAzimuth = event.values[0];
             float valuePitch = event.values[1];
             float valueRoll = event.values[2];
+
             azimuthTextView.setText("Azimuth: " + valueAzimuth);
             pitchTextView.setText("Pitch: " + valuePitch);
             rollTextView.setText("Roll: " + valueRoll);

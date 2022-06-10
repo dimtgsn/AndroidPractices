@@ -30,7 +30,7 @@ public class HistoryAdapter extends RecyclerView.Adapter<HistoryAdapter.StoryVie
         Owner owner = owners.get(position);
         holder.nameField.setText(owner.name);
         holder.ageField.setText(owner.age);
-        holder.petField.setText(owner.pet);
+        holder.jobField.setText(owner.job);
     }
 
     @Override
@@ -39,14 +39,16 @@ public class HistoryAdapter extends RecyclerView.Adapter<HistoryAdapter.StoryVie
     }
 
     public static class StoryViewHolder extends RecyclerView.ViewHolder{
-        public TextView petField;
-        public TextView nameField;
+        public TextView jobField;
+
         public TextView ageField;
+        public TextView nameField;
+
         public StoryViewHolder(View itemView) {
             super(itemView);
             nameField = itemView.findViewById(R.id.name);
+            jobField = itemView.findViewById(R.id.job);
             ageField =  itemView.findViewById(R.id.age);
-            petField = itemView.findViewById(R.id.pet);
         }
     }
 }

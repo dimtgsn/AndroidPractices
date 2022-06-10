@@ -42,7 +42,7 @@ public class WebViewFragment extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_web_view, container, false);
         Intent intent = new Intent(Intent.ACTION_VIEW);
-        intent.setData(Uri.parse("http://www.ya.ru"));
+        intent.setData(Uri.parse("http://www.yandex.ru"));
         startActivity(intent);
         return view;
     }

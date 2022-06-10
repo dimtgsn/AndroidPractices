@@ -123,7 +123,7 @@ public class MainActivity extends AppCompatActivity {
         NavigationView navigationView = binding.navView;
         mAppBarConfiguration = new AppBarConfiguration.Builder(
                 R.id.nav_home, R.id.nav_gallery, R.id.nav_slideshow, R.id.nav_brouser,R.id.nav_calculate,R.id.nav_webView,
-                R.id.nav_music,R.id.nav_sensor,R.id.nav_record,R.id.nav_camera)
+                R.id.nav_music,R.id.nav_sensor,R.id.nav_record,R.id.nav_camera,R.id.nav_settings)
                 .setOpenableLayout(drawer)
                 .build();
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_main);

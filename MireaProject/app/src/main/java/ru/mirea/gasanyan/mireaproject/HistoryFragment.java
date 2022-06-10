@@ -16,21 +16,25 @@ import java.util.List;
 
 public class HistoryFragment extends Fragment {
     private List<Owner> owners;
+
     private RecyclerView recyclerView;
+
+    private AppDatabase appDb;
+
     private OwnerDao ownerDao;
-    private AppDatabase appDatabase;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_history, container, false);
 
-        appDatabase = App.getInstance().getDatabase();
+        appDb = App.getInstance().getDatabase();
 
-        ownerDao = appDatabase.ownerDao();
+        ownerDao = appDb.ownerDao();
         owners = ownerDao.getAll();
 
         RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getContext());
         recyclerView = view.findViewById(R.id.recyclerView);
+
         recyclerView.setLayoutManager(mLayoutManager);
         recyclerView.setItemAnimator(new DefaultItemAnimator());
 
@@ -43,7 +47,6 @@ public class HistoryFragment extends Fragment {
                 startActivity(intent);
             }
         });
-
         HistoryAdapter adapter = new HistoryAdapter(owners);
         recyclerView.setAdapter(adapter);
 
